@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Jean-Philippe AMAT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(to right, #1e293b, #0f172a, #1e293b);
+      color: white;
+      padding: 2.5rem 2rem;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .header-left {
+      flex: 1;
+    }
+
+    .cv-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .cv-label-bar {
+      width: 4px;
+      height: 32px;
+      background-color: #f59e0b;
+    }
+
+    .cv-label-text {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      color: #94a3b8;
+      text-transform: uppercase;
+    }
+
+    .header h1 {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+      margin-bottom: 0.5rem;
+    }
+
+    .header h1 span {
+      font-weight: 700;
+    }
+
+    .header-subtitle {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      margin-bottom: 0.25rem;
+    }
+
+    .header-mission {
+      color: #f59e0b;
+      font-weight: 500;
+    }
+
+    .header-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .header-tag {
+      font-size: 0.75rem;
+      padding: 0.375rem 0.75rem;
+      background-color: rgba(255,255,255,0.1);
+      color: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .contact-box {
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-box p {
+      color: white;
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-box .location {
+      color: #94a3b8;
+      margin-top: 0.75rem;
+    }
+
+    /* Navigation */
+    .nav {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+    }
+
+    .nav-btn {
+      padding: 1rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #64748b;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: -1px;
+    }
+
+    .nav-btn:hover {
+      color: #334155;
+      border-bottom-color: #cbd5e1;
+    }
+
+    .nav-btn.active {
+      color: #0f172a;
+      border-bottom-color: #f59e0b;
+    }
+
+    /* Main */
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+    }
+
+    /* Sections */
+    .section {
+      display: none;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title-bar {
+      width: 4px;
+      height: 20px;
+      background-color: #f59e0b;
+    }
+
+    /* Grid layouts */
+    .grid-3-1 {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .grid-5-2 {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 2rem;
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(245, 158, 11, 0.5);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .card-dark {
+      background: #1e293b;
+      color: white;
+      border: none;
+    }
+
+    .card-dark h3 {
+      color: #f59e0b;
+    }
+
+    .card-dark p {
+      color: #94a3b8;
+    }
+
+    .card-dark .highlight {
+      color: white;
+    }
+
+    .card-gray {
+      background: #f1f5f9;
+      border: none;
+    }
+
+    /* Text styles */
+    .text-sm { font-size: 0.875rem; }
+    .text-xs { font-size: 0.75rem; }
+    .text-lg { font-size: 1.125rem; }
+    .text-slate-500 { color: #64748b; }
+    .text-slate-600 { color: #475569; }
+    .text-slate-400 { color: #94a3b8; }
+    .text-amber { color: #f59e0b; }
+    .font-semibold { font-weight: 600; }
+    .font-medium { font-weight: 500; }
+    .uppercase { text-transform: uppercase; }
+    .tracking-wider { letter-spacing: 0.05em; }
+
+    .mb-1 { margin-bottom: 0.25rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-3 { margin-bottom: 0.75rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mt-3 { margin-top: 0.75rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-5 { margin-top: 1.25rem; }
+
+    /* Quote */
+    .quote {
+      background: #f1f5f9;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 1.5rem;
+      font-style: italic;
+      color: #334155;
+    }
+
+    /* Stats */
+    .stat-card {
+      text-align: center;
+      padding: 1rem;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+    }
+
+    .stat-value {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+    }
+
+    /* Diplome list */
+    .diplome-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+      margin-bottom: 0.75rem;
+    }
+
+    .diplome-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .diplome-year {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      background: #f8fafc;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    /* Timeline */
+    .timeline-item {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .timeline-date {
+      width: 120px;
+      flex-shrink: 0;
+      text-align: right;
+      padding-top: 1.5rem;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+
+    .timeline-content {
+      position: relative;
+      padding-bottom: 2rem;
+      padding-left: 2rem;
+      border-left: 2px solid #e2e8f0;
+    }
+
+    .timeline-item:last-child .timeline-content {
+      border-left-color: transparent;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -7px;
+      top: 1.5rem;
+      width: 12px;
+      height: 12px;
+      background: white;
+      border: 2px solid #f59e0b;
+      border-radius: 50%;
+    }
+
+    .timeline-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.25rem;
+      transition: all 0.2s;
+    }
+
+    .timeline-card:hover {
+      border-color: rgba(245, 158, 11, 0.5);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .timeline-card h3 {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .timeline-card .specialite {
+      color: #d97706;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .timeline-card .lieu {
+      color: #64748b;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    .timeline-card .detail {
+      color: #475569;
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+      line-height: 1.6;
+    }
+
+    /* Tags */
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.625rem;
+      background: #f1f5f9;
+      color: #475569;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Tools section */
+    .tools-section {
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .tool-tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: white;
+      color: #334155;
+      font-size: 0.875rem;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+      margin-right: 0.75rem;
+      margin-bottom: 0.75rem;
+      transition: border-color 0.2s;
+    }
+
+    .tool-tag:hover {
+      border-color: #f59e0b;
+    }
+
+    /* List with dots */
+    .dot-list {
+      list-style: none;
+    }
+
+    .dot-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: #475569;
+      margin-bottom: 0.5rem;
+    }
+
+    .dot-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #f59e0b;
+      border-radius: 50%;
+      margin-top: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    /* Numbered items */
+    .numbered-item {
+      display: flex;
+      gap: 1rem;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .numbered-item:hover {
+      border-color: rgba(245, 158, 11, 0.5);
+    }
+
+    .numbered-item .num {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #e2e8f0;
+    }
+
+    .numbered-item h4 {
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 0.875rem;
+    }
+
+    .numbered-item p {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+    }
+
+    /* Project card */
+    .project-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.25rem;
+      transition: all 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: rgba(245, 158, 11, 0.5);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-category {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      background: #f1f5f9;
+      color: #64748b;
+      border-radius: 4px;
+    }
+
+    .project-year {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    .project-card h3 {
+      font-weight: 600;
+      color: #0f172a;
+      margin-top: 0.5rem;
+    }
+
+    .project-card .desc {
+      font-size: 0.875rem;
+      color: #475569;
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+
+    /* Table */
+    .table-container {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background: #f8fafc;
+    }
+
+    th {
+      text-align: left;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 1.25rem;
+    }
+
+    th:last-child {
+      text-align: right;
+    }
+
+    td {
+      padding: 1rem 1.25rem;
+      font-size: 0.875rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    td:first-child {
+      color: #1e293b;
+    }
+
+    td:nth-child(2) {
+      color: #64748b;
+    }
+
+    td:last-child {
+      text-align: right;
+      color: #94a3b8;
+    }
+
+    tr:hover {
+      background: #f8fafc;
+    }
+
+    /* Engagement card */
+    .engagement-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .engagement-card h3 {
+      font-weight: 600;
+      color: #1e293b;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+      margin-bottom: 1rem;
+    }
+
+    /* Perspectives */
+    .perspectives {
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .perspectives h3 {
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+    }
+
+    .perspectives ul {
+      list-style: none;
+    }
+
+    .perspectives li {
+      font-size: 0.875rem;
+      color: #475569;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: #1e293b;
+      color: white;
+      margin-top: 2.5rem;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+
+    .footer-content span:first-child {
+      color: #94a3b8;
+    }
+
+    .footer-content span:last-child {
+      color: #64748b;
+    }
+
+    /* Personal info card */
+    .info-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .info-card h3 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .space-y-6 > * + * {
+      margin-top: 1.5rem;
+    }
+
+    .space-y-4 > * + * {
+      margin-top: 1rem;
+    }
+
+    .space-y-8 > * + * {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="header-left">
+        <div class="cv-label">
+          <div class="cv-label-bar"></div>
+          <span class="cv-label-text">Curriculum Vitae</span>
+        </div>
+        <h1>Jean-Philippe <span>AMAT</span></h1>
+        <p class="header-subtitle">Architecte DPLG — Professeur de Lycée Professionnel</p>
+        <p class="header-mission">Chargé de mission CMQE BTP et Usage du Numérique</p>
+        <div class="header-tags">
+          <span class="header-tag">Formateur de Formateurs</span>
+          <span class="header-tag">Pédagogies Actives</span>
+          <span class="header-tag">BIM</span>
+          <span class="header-tag">VR/AR</span>
+          <span class="header-tag">IA</span>
+          <span class="header-tag">Drone</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="contact-box">
+          <p class="contact-label">Contact</p>
+          <p>jphi_4@hotmail.fr</p>
+          <p>06 74 58 85 28</p>
+          <p class="location">Toulouse, France</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-content">
+      <button class="nav-btn active" onclick="showSection('profil', this)">Profil</button>
+      <button class="nav-btn" onclick="showSection('parcours', this)">Expériences</button>
+      <button class="nav-btn" onclick="showSection('competences', this)">Compétences</button>
+      <button class="nav-btn" onclick="showSection('pedagogie', this)">Approche Pédagogique</button>
+      <button class="nav-btn" onclick="showSection('projets', this)">Projets</button>
+      <button class="nav-btn" onclick="showSection('engagement', this)">Engagement</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- PROFIL -->
+    <section id="profil" class="section active">
+      <div class="grid-3-1">
+        <div class="space-y-8">
+          <div>
+            <h2 class="section-title">
+              <span class="section-title-bar"></span>
+              Profil Professionnel
+            </h2>
+            <p class="text-slate-600 mb-4">
+              Enseignant dans l'Éducation nationale depuis 2014, j'exerce une mission riche qui dépasse la simple transmission de savoirs. 
+              Mon rôle s'étend de la salle de classe à la communauté éducative, où collaboration et ouverture sont essentielles.
+            </p>
+            <p class="text-slate-600">
+              Architecte DPLG de formation initiale, je conjugue expertise technique et innovation pédagogique. 
+              En tant que chargé de mission au Campus des Métiers et des Qualifications BTP, je forme enseignants 
+              et professionnels aux usages du numérique : BIM, réalité virtuelle, drones, scanner 3D et intelligence artificielle.
+            </p>
+          </div>
+
+          <div class="quote">
+            « Être enseignant, c'est être pédagogue, éducateur et acteur social, au service de la formation des citoyens de demain. »
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Chiffres clés</h3>
+            <div class="grid-4">
+              <div class="stat-card">
+                <div class="stat-value">20+</div>
+                <div class="stat-label">Années d'expérience</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Formations animées</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Publications nationales</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">25+</div>
+                <div class="stat-label">Projets pédagogiques</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="space-y-6">
+          <div class="card">
+            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Formation</h3>
+            <div class="diplome-item">
+              <div>
+                <p class="font-medium text-sm">Architecte DPLG</p>
+                <p class="text-xs text-slate-500">Bac+5</p>
+              </div>
+              <span class="diplome-year">2001</span>
+            </div>
+            <div class="diplome-item">
+              <div>
+                <p class="font-medium text-sm">PLP Externe Génie Civil</p>
+                <p class="text-xs text-slate-500">Concours</p>
+              </div>
+              <span class="diplome-year">2015</span>
+            </div>
+            <div class="diplome-item">
+              <div>
+                <p class="font-medium text-sm">CAEA</p>
+                <p class="text-xs text-slate-500">Aéronautique</p>
+              </div>
+              <span class="diplome-year">2019</span>
+            </div>
+            <div class="diplome-item">
+              <div>
+                <p class="font-medium text-sm">Pilote de Drone</p>
+                <p class="text-xs text-slate-500">Catégorie A1/A3</p>
+              </div>
+              <span class="diplome-year">2019</span>
+            </div>
+            <div class="diplome-item">
+              <div>
+                <p class="font-medium text-sm">Habilitation R408</p>
+                <p class="text-xs text-slate-500">Échafaudages</p>
+              </div>
+              <span class="diplome-year">2017</span>
+            </div>
+          </div>
+
+          <div class="card card-dark">
+            <h3 class="text-sm font-semibold uppercase tracking-wider mb-3">Affectation actuelle</h3>
+            <p class="highlight font-semibold text-lg">Lycée Urbain Vitry</p>
+            <p class="text-sm">Lycée des Métiers du Bâtiment</p>
+            <p class="text-xs mt-3" style="color: #64748b;">Toulouse • Depuis 2016</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Informations personnelles</h3>
+            <p class="text-sm text-slate-600">Né le 04 juin 1974</p>
+            <p class="text-sm text-slate-600">Pacsé, 2 enfants</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PARCOURS -->
+    <section id="parcours" class="section">
+      <h2 class="section-title">
+        <span class="section-title-bar"></span>
+        Parcours Professionnel
+      </h2>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">2016 - Présent</div>
+        <div class="timeline-content">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Professeur de Lycée Professionnel</h3>
+            <p class="specialite">Génie Civil, Construction et Économie</p>
+            <p class="lieu">Lycée Urbain Vitry - Toulouse</p>
+            <p class="detail">Enseignement en Bac Pro TEBAA, BTS Bâtiment. Affectation à titre définitif.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2019 - 2025</div>
+        <div class="timeline-content">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Chargé de Mission</h3>
+            <p class="specialite">CMQE BTP et Usage du Numérique</p>
+            <p class="lieu">Campus des Métiers et des Qualifications</p>
+            <p class="detail">Référent capture du réel, formation VR/BIM, accompagnement des établissements, développement d'IA éducative.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2015 - 2016</div>
+        <div class="timeline-content">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Professeur Stagiaire</h3>
+            <p class="specialite">Génie Civil</p>
+            <p class="lieu">Académie Aix-Marseille</p>
+            <p class="detail">Formation initiale, Lycée Les Alpilles.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2012 - 2014</div>
+        <div class="timeline-content">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Chargé d'Opérations</h3>
+            <p class="specialite">Direction du Patrimoine</p>
+            <p class="lieu">Mairie de Blagnac</p>
+            <p class="detail">Conduite d'opérations en mode BIM, gestion budgétaire.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2010 - 2013</div>
+        <div class="timeline-content">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Architecte Libéral</h3>
+            <p class="specialite">Maquettes Numériques BIM</p>
+            <p class="lieu">Toulouse</p>
+            <p class="detail">Relevés 3D, AMO Ministère de la Défense.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2005 - 2008</div>
+        <div class="timeline-content">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Responsable Bureau d'Études</h3>
+            <p class="specialite">Entreprise TCE</p>
+            <p class="lieu">Toulouse</p>
+            <p class="detail">Formateur Revit, R&D habitat modulaire avec Dassault.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2002 - 2005</div>
+        <div class="timeline-content">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Chef de Projet Architecture</h3>
+            <p class="specialite">Service Architecture</p>
+            <p class="lieu">Mairie de Toulouse</p>
+            <p class="detail">Conception et réalisation d'équipements publics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCES -->
+    <section id="competences" class="section">
+      <div class="space-y-8">
+        <div>
+          <h2 class="section-title">
+            <span class="section-title-bar"></span>
+            Compétences Pédagogiques
+          </h2>
+          
+          <div class="grid-2">
+            <div class="card">
+              <h3 class="font-semibold mb-2">Pédagogie de Projet</h3>
+              <p class="text-sm text-slate-600">Placer l'élève au cœur de ses apprentissages à travers des situations concrètes et professionnalisantes</p>
+            </div>
+            <div class="card">
+              <h3 class="font-semibold mb-2">Classe Inversée</h3>
+              <p class="text-sm text-slate-600">Contenus théoriques en amont (H5P, Edpuzzle), temps de classe dédié à la pratique et l'accompagnement</p>
+            </div>
+            <div class="card">
+              <h3 class="font-semibold mb-2">Classe Renversée</h3>
+              <p class="text-sm text-slate-600">L'élève devient acteur de la transmission, favorisant la co-construction des savoirs</p>
+            </div>
+            <div class="card">
+              <h3 class="font-semibold mb-2">Pédagogie Active</h3>
+              <p class="text-sm text-slate-600">Manipulation, expérimentation et résolution de problèmes en contexte professionnel</p>
+            </div>
+            <div class="card">
+              <h3 class="font-semibold mb-2">Différenciation</h3>
+              <p class="text-sm text-slate-600">Parcours personnalisés et multimodalité pour s'adapter à chaque apprenant</p>
+            </div>
+            <div class="card">
+              <h3 class="font-semibold mb-2">Évaluation par Compétences</h3>
+              <p class="text-sm text-slate-600">Auto-évaluation, feedback formatif et construction de repères clairs</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="section-title">
+            <span class="section-title-bar"></span>
+            Compétences Techniques
+          </h2>
+          
+          <div class="grid-3">
+            <div class="card">
+              <h3 class="font-semibold text-sm mb-3">Maquette Numérique</h3>
+              <div>
+                <span class="tag">Revit Architecture</span>
+                <span class="tag">ArchiCAD</span>
+                <span class="tag">SketchUp Pro</span>
+                <span class="tag">Archiwizard</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="font-semibold text-sm mb-3">Technologies Immersives</h3>
+              <div>
+                <span class="tag">Twinmotion</span>
+                <span class="tag">Oculus Quest</span>
+                <span class="tag">Réalité Virtuelle</span>
+                <span class="tag">Réalité Augmentée</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="font-semibold text-sm mb-3">Intelligence Artificielle</h3>
+              <div>
+                <span class="tag">Apps pédagogiques</span>
+                <span class="tag">Recherche appliquée</span>
+                <span class="tag">Outils génératifs</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="font-semibold text-sm mb-3">Capture du Réel</h3>
+              <div>
+                <span class="tag">Pilote drone A1/A3</span>
+                <span class="tag">Photogrammétrie</span>
+                <span class="tag">Scanner 3D X7 Trimble</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="font-semibold text-sm mb-3">Outils Pédagogiques</h3>
+              <div>
+                <span class="tag">H5P</span>
+                <span class="tag">Genially</span>
+                <span class="tag">Edpuzzle</span>
+                <span class="tag">Gamma</span>
+                <span class="tag">Coggle</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="font-semibold text-sm mb-3">Production Média</h3>
+              <div>
+                <span class="tag">Photoshop</span>
+                <span class="tag">Lightroom</span>
+                <span class="tag">Montage vidéo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tools-section">
+          <h3 class="font-semibold mb-4">Outils de la Classe Inversée & Intelligence Artificielle</h3>
+          <div>
+            <span class="tool-tag">H5P</span>
+            <span class="tool-tag">Edpuzzle</span>
+            <span class="tool-tag">Genially</span>
+            <span class="tool-tag">Twinmotion VR</span>
+            <span class="tool-tag">Coggle</span>
+            <span class="tool-tag">ChatGPT</span>
+            <span class="tool-tag">Perplexity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PEDAGOGIE -->
+    <section id="pedagogie" class="section">
+      <h2 class="section-title">
+        <span class="section-title-bar"></span>
+        Approche Pédagogique
+      </h2>
+
+      <div class="grid-5-2">
+        <div class="space-y-6">
+          <p class="text-slate-600">
+            J'ancre mon enseignement sur une <strong>pédagogie de projet</strong> qui place l'élève au cœur de ses 
+            apprentissages. Je m'appuie sur des situations concrètes pour développer les compétences techniques et professionnelles attendues.
+          </p>
+          
+          <p class="text-slate-600">
+            Cette <strong>pédagogie active</strong> stimule la co-construction des savoirs et mobilise la multimodalité 
+            (texte, audio, vidéo, interactif). Elle facilite la différenciation, renforce l'appropriation des savoirs et développe 
+            la maîtrise critique des outils numériques, compétence indispensable du socle commun.
+          </p>
+
+          <div class="card">
+            <h3 class="font-semibold mb-4">Valeurs et principes</h3>
+            <div class="grid-2">
+              <ul class="dot-list">
+                <li>Climat bienveillant et exigeant</li>
+                <li>Maîtrise de la langue française</li>
+                <li>Clarté des consignes</li>
+              </ul>
+              <ul class="dot-list">
+                <li>Lien école/famille</li>
+                <li>Valeurs de la République</li>
+                <li>Formation citoyenne</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="numbered-item">
+            <span class="num">01</span>
+            <div>
+              <h4>Pédagogie de Projet</h4>
+              <p>Situations concrètes, compétences techniques, apprentissage par les pairs</p>
+            </div>
+          </div>
+          <div class="numbered-item">
+            <span class="num">02</span>
+            <div>
+              <h4>Classe Inversée</h4>
+              <p>Contenus en amont via H5P/Edpuzzle, pratique active en classe</p>
+            </div>
+          </div>
+          <div class="numbered-item">
+            <span class="num">03</span>
+            <div>
+              <h4>Classe Renversée</h4>
+              <p>L'élève devient enseignant, co-construction des savoirs</p>
+            </div>
+          </div>
+          <div class="numbered-item">
+            <span class="num">04</span>
+            <div>
+              <h4>Différenciation</h4>
+              <p>Multimodalité, parcours personnalisés, remédiation ciblée</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="section">
+      <div class="space-y-8">
+        <div>
+          <h2 class="section-title">
+            <span class="section-title-bar"></span>
+            Projets & Réalisations
+          </h2>
+          
+          <div class="grid-2">
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-category">Communication</span>
+                <span class="project-year">2024-2026</span>
+              </div>
+              <h3>Fiches de Présentation des Formations</h3>
+              <p class="desc">Conception des supports de communication du lycée en collaboration avec le DDFPT et l'enseignant d'arts appliqués.</p>
+            </div>
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-category">Innovation</span>
+                <span class="project-year">2024-2026</span>
+              </div>
+              <h3>Vibe-Coding</h3>
+              <p class="desc">Développement d'applications de gestion des outils informatiques et d'aide à la mise en place de procédures de type BPMN.</p>
+            </div>
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-category">Formation</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3>PFMP au CMQE</h3>
+              <p class="desc">Encadrement de stages : relevé scanner 3D, maquettes numériques "tel que construit", certification drone A1/A3.</p>
+            </div>
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-category">Innovation</span>
+                <span class="project-year">2024-2026</span>
+              </div>
+              <h3>IA & Pédagogie BTP</h3>
+              <p class="desc">Création d'applications pédagogiques : gestion de classe, estimation BTP, architecture paramétrique.</p>
+            </div>
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-category">Projet culturel</span>
+                <span class="project-year">2024-2025</span>
+              </div>
+              <h3>Regards Croisés</h3>
+              <p class="desc">Organisation d'un concours photo inter-lycées BTP avec exposition au CMQE.</p>
+            </div>
+            <div class="project-card">
+              <div class="project-header">
+                <span class="project-category">International</span>
+                <span class="project-year">2022-2024</span>
+              </div>
+              <h3>Formation BIM International</h3>
+              <p class="desc">Programme de formation en distanciel avec l'Université USEK au Liban sur 2 années.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="section-title">
+            <span class="section-title-bar"></span>
+            Publications
+          </h2>
+          
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Publication</th>
+                  <th>Source</th>
+                  <th>Année</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>R408 - Utiliser un échafaudage de pied</td>
+                  <td>Éduscol</td>
+                  <td>2021</td>
+                </tr>
+                <tr>
+                  <td>Sécurité et respect du planning</td>
+                  <td>Éduscol</td>
+                  <td>2020</td>
+                </tr>
+                <tr>
+                  <td>Plans de travail & Réalité Virtuelle</td>
+                  <td>Site Académique STI</td>
+                  <td>2020-2021</td>
+                </tr>
+                <tr>
+                  <td>9 formations asynchrones - Outils numériques BTP</td>
+                  <td>Plateforme IOGA (CMQE)</td>
+                  <td>2023-2024</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGAGEMENT -->
+    <section id="engagement" class="section">
+      <div class="space-y-8">
+        <div>
+          <h2 class="section-title">
+            <span class="section-title-bar"></span>
+            Engagement Professionnel
+          </h2>
+          
+          <div class="grid-3">
+            <div class="engagement-card">
+              <h3>Responsabilités institutionnelles</h3>
+              <ul class="dot-list">
+                <li>Professeur principal</li>
+                <li>Membre suppléant du Conseil d'Administration</li>
+                <li>Commission d'auto-évaluation du lycée</li>
+                <li>Permanent à la conception des sujets Bac TEBAA</li>
+              </ul>
+            </div>
+
+            <div class="engagement-card">
+              <h3>Formation & Accompagnement</h3>
+              <ul class="dot-list">
+                <li>Formateur de formateurs STI au CMQE BTP</li>
+                <li>Tuteur de néo-contractuels</li>
+                <li>Accompagnement GREBTP - Projets interdisciplinaires</li>
+                <li>Formation BIM en distanciel - USEK Liban</li>
+              </ul>
+            </div>
+
+            <div class="engagement-card">
+              <h3>Rayonnement</h3>
+              <ul class="dot-list">
+                <li>Productions pour Éduscol</li>
+                <li>Programme Égalité des chances (Sciences Po et ENSA Toulouse)</li>
+                <li>Rencontre Erasmus - Délégation lituanienne</li>
+                <li>Travaux sur l'IA éducative en lien avec les compétences ciblées par l'UNESCO</li>
+                <li>Conception de sujets BTS BAT, BTS EEC et Bac Pro TEBAA</li>
+                <li>Printemps des poètes : création d'une exposition avec les élèves de 1AA</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="section-title">
+            <span class="section-title-bar"></span>
+            Perspectives d'Évolution
+          </h2>
+          
+          <div class="perspectives">
+            <div class="grid-3">
+              <div>
+                <h3>Objectifs</h3>
+                <ul>
+                  <li>• Formateur académique orienté pédagogie numérique</li>
+                  <li>• Référent numérique établissement</li>
+                  <li>• Coordination projets pédagogiques</li>
+                  <li>• Tutorat d'enseignants</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Ouvertures</h3>
+                <ul>
+                  <li>• Diversification des publics</li>
+                  <li>• Projets à dimension internationale</li>
+                  <li>• Missions d'encadrement</li>
+                  <li>• Lien formation initiale/continue</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Recherche</h3>
+                <ul>
+                  <li>• Intelligence artificielle et pédagogie</li>
+                  <li>• Recherche appliquée</li>
+                  <li>• Coopérations internationales</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <span>© 2025 Jean-Philippe AMAT</span>
+      <span>Document généré pour le rendez-vous de carrière</span>
+    </div>
+  </footer>
+
+  <script>
+    function showSection(sectionId, btn) {
+      // Hide all sections
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      // Show selected section
+      document.getElementById(sectionId).classList.add('active');
+      // Update nav buttons
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
