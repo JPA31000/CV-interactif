@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV Jean-Philippe AMAT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Jean-Philippe AMAT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,24 +14,40 @@
 
     body {
       font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
-      background-color: #f8fafc;
+      background: #f8fafc;
       color: #1e293b;
       line-height: 1.6;
     }
 
-    /* Header */
+    /* ===== HEADER ===== */
     .header {
-      background: linear-gradient(to right, #1e293b, #0f172a, #1e293b);
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #334155 100%);
       color: white;
-      padding: 2.5rem 2rem;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
     .header-content {
       max-width: 1100px;
       margin: 0 auto;
+      padding: 40px 40px 32px;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      position: relative;
+      z-index: 1;
     }
 
     .header-left {
@@ -41,29 +57,30 @@
     .cv-label {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
+      gap: 8px;
+      margin-bottom: 12px;
     }
 
     .cv-label-bar {
-      width: 4px;
-      height: 32px;
-      background-color: #f59e0b;
+      width: 3px;
+      height: 18px;
+      background: #f59e0b;
+      border-radius: 2px;
     }
 
     .cv-label-text {
-      font-size: 0.75rem;
-      letter-spacing: 0.3em;
-      color: #94a3b8;
+      font-size: 11px;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      color: #94a3b8;
     }
 
     .header h1 {
       font-family: 'Libre Baskerville', Georgia, serif;
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       font-weight: 400;
-      letter-spacing: 0.025em;
-      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
     }
 
     .header h1 span {
@@ -71,90 +88,96 @@
     }
 
     .header-subtitle {
-      font-size: 1.125rem;
+      font-size: 1.1rem;
       color: #cbd5e1;
-      margin-bottom: 0.25rem;
+      margin-bottom: 2px;
+      font-weight: 300;
     }
 
     .header-mission {
       color: #f59e0b;
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 0.95rem;
     }
 
     .header-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.25rem;
+      gap: 6px;
+      margin-top: 14px;
     }
 
     .header-tag {
-      font-size: 0.75rem;
-      padding: 0.375rem 0.75rem;
-      background-color: rgba(255,255,255,0.1);
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      background: rgba(255,255,255,0.08);
       color: #cbd5e1;
       border-radius: 4px;
-    }
-
-    .header-right {
-      text-align: right;
+      border: 1px solid rgba(255,255,255,0.06);
+      letter-spacing: 0.5px;
     }
 
     .contact-box {
-      background-color: rgba(255,255,255,0.05);
-      border-radius: 8px;
-      padding: 1.25rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 16px 20px;
+      text-align: right;
+      min-width: 200px;
     }
 
     .contact-label {
-      font-size: 0.75rem;
-      color: #94a3b8;
+      font-size: 0.65rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.75rem;
+      letter-spacing: 2px;
+      color: #64748b;
+      margin-bottom: 8px;
     }
 
     .contact-box p {
-      color: white;
-      font-size: 0.875rem;
-      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+      margin-bottom: 3px;
     }
 
-    .contact-box .location {
-      color: #94a3b8;
-      margin-top: 0.75rem;
+    .location {
+      color: #64748b;
+      margin-top: 8px !important;
+      font-size: 0.85rem !important;
     }
 
-    /* Navigation */
+    /* ===== NAVIGATION ===== */
     .nav {
       background: white;
       border-bottom: 1px solid #e2e8f0;
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
 
     .nav-content {
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
+      padding: 0 40px;
     }
 
     .nav-btn {
-      padding: 1rem 1.25rem;
-      font-size: 0.875rem;
+      padding: 16px 20px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.85rem;
       font-weight: 500;
-      color: #64748b;
+      color: #94a3b8;
       background: none;
       border: none;
       border-bottom: 2px solid transparent;
       cursor: pointer;
-      transition: all 0.2s;
-      margin-bottom: -1px;
+      transition: all 0.25s ease;
+      white-space: nowrap;
     }
 
     .nav-btn:hover {
-      color: #334155;
+      color: #475569;
       border-bottom-color: #cbd5e1;
     }
 
@@ -163,17 +186,16 @@
       border-bottom-color: #f59e0b;
     }
 
-    /* Main */
+    /* ===== MAIN ===== */
     .main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 2.5rem 2rem;
+      padding: 32px 40px 60px;
     }
 
-    /* Sections */
     .section {
       display: none;
-      animation: fadeIn 0.4s ease-out;
+      animation: fadeIn 0.4s ease;
     }
 
     .section.active {
@@ -181,533 +203,644 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* ===== SECTION TITLES ===== */
     .section-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #0f172a;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #e2e8f0;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 10px;
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 20px;
     }
 
     .section-title-bar {
       width: 4px;
-      height: 20px;
-      background-color: #f59e0b;
+      height: 22px;
+      background: #f59e0b;
+      border-radius: 2px;
     }
 
-    /* Grid layouts */
-    .grid-3-1 {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2.5rem;
+    /* ===== PROFIL ===== */
+    .profil-text {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.7;
+      margin-bottom: 10px;
+      max-width: 800px;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
+    .profil-quote {
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-style: italic;
+      color: #64748b;
+      font-size: 0.95rem;
+      border-left: 3px solid #f59e0b;
+      padding-left: 16px;
+      margin: 20px 0;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-
-    .grid-4 {
+    .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
+      gap: 16px;
+      margin: 24px 0;
     }
 
-    .grid-5-2 {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 2rem;
-    }
-
-    /* Cards */
-    .card {
+    .stat-card {
+      text-align: center;
+      padding: 18px 12px;
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 1.5rem;
-      transition: all 0.2s;
+      border-radius: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .card:hover {
-      border-color: rgba(245, 158, 11, 0.5);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
 
-    .card-dark {
-      background: #1e293b;
-      color: white;
-      border: none;
-    }
-
-    .card-dark h3 {
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
       color: #f59e0b;
     }
 
-    .card-dark p {
-      color: #94a3b8;
+    .stat-label {
+      font-size: 0.78rem;
+      color: #64748b;
+      margin-top: 4px;
     }
 
-    .card-dark .highlight {
-      color: white;
+    .profil-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 24px;
     }
 
-    .card-gray {
-      background: #f1f5f9;
-      border: none;
-    }
-
-    /* Text styles */
-    .text-sm { font-size: 0.875rem; }
-    .text-xs { font-size: 0.75rem; }
-    .text-lg { font-size: 1.125rem; }
-    .text-slate-500 { color: #64748b; }
-    .text-slate-600 { color: #475569; }
-    .text-slate-400 { color: #94a3b8; }
-    .text-amber { color: #f59e0b; }
-    .font-semibold { font-weight: 600; }
-    .font-medium { font-weight: 500; }
-    .uppercase { text-transform: uppercase; }
-    .tracking-wider { letter-spacing: 0.05em; }
-
-    .mb-1 { margin-bottom: 0.25rem; }
-    .mb-2 { margin-bottom: 0.5rem; }
-    .mb-3 { margin-bottom: 0.75rem; }
-    .mb-4 { margin-bottom: 1rem; }
-    .mb-6 { margin-bottom: 1.5rem; }
-    .mt-3 { margin-top: 0.75rem; }
-    .mt-4 { margin-top: 1rem; }
-    .mt-5 { margin-top: 1.25rem; }
-
-    /* Quote */
-    .quote {
-      background: #f1f5f9;
-      border-left: 4px solid #f59e0b;
-      border-radius: 0 8px 8px 0;
-      padding: 1.5rem;
-      font-style: italic;
-      color: #334155;
-    }
-
-    /* Stats */
-    .stat-card {
-      text-align: center;
-      padding: 1rem;
+    .info-card {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
+      border-radius: 10px;
+      padding: 20px;
     }
 
-    .stat-value {
-      font-size: 1.875rem;
+    .info-card h3 {
+      font-size: 0.85rem;
       font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .formation-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .formation-item:last-child {
+      border-bottom: none;
+    }
+
+    .formation-name {
+      font-weight: 600;
+      font-size: 0.9rem;
       color: #1e293b;
     }
 
-    .stat-label {
-      font-size: 0.75rem;
-      color: #64748b;
-      margin-top: 0.25rem;
-    }
-
-    /* Diplome list */
-    .diplome-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid #f1f5f9;
-      margin-bottom: 0.75rem;
-    }
-
-    .diplome-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .diplome-year {
-      font-size: 0.75rem;
-      color: #94a3b8;
-      background: #f8fafc;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-    }
-
-    /* Timeline */
-    .timeline-item {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .timeline-date {
-      width: 120px;
-      flex-shrink: 0;
-      text-align: right;
-      padding-top: 1.5rem;
-      font-size: 0.875rem;
+    .formation-detail {
+      font-size: 0.8rem;
       color: #64748b;
     }
 
-    .timeline-content {
+    .formation-year {
+      font-size: 0.8rem;
+      color: #f59e0b;
+      font-weight: 600;
+    }
+
+    /* ===== DERNIERS TRAVAUX ===== */
+    .travaux-section {
+      margin-top: 28px;
+    }
+
+    .travaux-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .travaux-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 18px 20px;
+      transition: all 0.25s ease;
       position: relative;
-      padding-bottom: 2rem;
-      padding-left: 2rem;
-      border-left: 2px solid #e2e8f0;
+      overflow: hidden;
     }
 
-    .timeline-item:last-child .timeline-content {
-      border-left-color: transparent;
+    .travaux-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: #f59e0b;
+      border-radius: 2px 0 0 2px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .travaux-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      border-color: #f59e0b;
+    }
+
+    .travaux-card:hover::before {
+      opacity: 1;
+    }
+
+    .travaux-card-emoji {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .travaux-card-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #0f172a;
+      margin-bottom: 5px;
+    }
+
+    .travaux-card-desc {
+      font-size: 0.8rem;
+      color: #64748b;
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+
+    .travaux-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+
+    .travaux-tag {
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .travaux-tag.react { background: #ede9fe; color: #6d28d9; }
+    .travaux-tag.ia { background: #fef3c7; color: #92400e; }
+    .travaux-tag.github { background: #d1fae5; color: #065f46; }
+    .travaux-tag.web { background: #dbeafe; color: #1e40af; }
+
+    .travaux-card-link {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .travaux-card-link:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+
+    /* ===== PARCOURS ===== */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #f59e0b, #e2e8f0);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+      padding-left: 20px;
     }
 
     .timeline-dot {
       position: absolute;
-      left: -7px;
-      top: 1.5rem;
-      width: 12px;
-      height: 12px;
-      background: white;
-      border: 2px solid #f59e0b;
+      left: -26px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
-    }
-
-    .timeline-card {
+      border: 3px solid #f59e0b;
       background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 1.25rem;
-      transition: all 0.2s;
     }
 
-    .timeline-card:hover {
-      border-color: rgba(245, 158, 11, 0.5);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    .timeline-dot.active {
+      background: #f59e0b;
     }
 
-    .timeline-card h3 {
+    .timeline-date {
+      font-size: 0.8rem;
+      color: #f59e0b;
       font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .timeline-title {
+      font-size: 1.1rem;
+      font-weight: 700;
       color: #0f172a;
     }
 
-    .timeline-card .specialite {
-      color: #d97706;
-      font-size: 0.875rem;
-      font-weight: 500;
-    }
-
-    .timeline-card .lieu {
+    .timeline-subtitle {
+      font-size: 0.88rem;
       color: #64748b;
-      font-size: 0.875rem;
-      margin-top: 0.25rem;
+      font-style: italic;
     }
 
-    .timeline-card .detail {
+    .timeline-org {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 6px;
+    }
+
+    .timeline-desc {
+      font-size: 0.88rem;
       color: #475569;
-      font-size: 0.875rem;
-      margin-top: 0.75rem;
-      line-height: 1.6;
     }
 
-    /* Tags */
-    .tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      padding: 0.25rem 0.625rem;
-      background: #f1f5f9;
-      color: #475569;
-      border-radius: 4px;
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
+    /* ===== COMPÉTENCES ===== */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
-    /* Tools section */
-    .tools-section {
-      background: #f1f5f9;
-      border-radius: 8px;
-      padding: 1.5rem;
-    }
-
-    .tool-tag {
-      display: inline-block;
-      padding: 0.5rem 1rem;
+    .comp-card {
       background: white;
-      color: #334155;
-      font-size: 0.875rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .comp-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .comp-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .comp-card-desc {
+      font-size: 0.82rem;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+
+    .comp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .comp-tag {
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      background: #f1f5f9;
+      color: #475569;
       border-radius: 4px;
       border: 1px solid #e2e8f0;
-      margin-right: 0.75rem;
-      margin-bottom: 0.75rem;
-      transition: border-color 0.2s;
     }
 
-    .tool-tag:hover {
-      border-color: #f59e0b;
+    .skill-section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 28px 0 16px;
     }
 
-    /* List with dots */
-    .dot-list {
-      list-style: none;
-    }
-
-    .dot-list li {
+    .tools-grid {
       display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      font-size: 0.875rem;
-      color: #475569;
-      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
     }
 
-    .dot-list li::before {
-      content: '';
+    .tools-grid .comp-tag {
+      font-size: 0.78rem;
+      padding: 5px 12px;
+    }
+
+    /* ===== APPROCHE PÉDAGOGIQUE ===== */
+    .pedagogy-text {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.7;
+      margin-bottom: 12px;
+      max-width: 800px;
+    }
+
+    .pedagogy-text strong {
+      color: #0f172a;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 16px 0 24px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+
+    .value-item {
+      font-size: 0.88rem;
+      color: #475569;
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .value-bullet {
       width: 6px;
       height: 6px;
       background: #f59e0b;
       border-radius: 50%;
-      margin-top: 0.5rem;
       flex-shrink: 0;
     }
 
-    /* Numbered items */
-    .numbered-item {
-      display: flex;
-      gap: 1rem;
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .step-card {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      transition: border-color 0.2s;
+      border-radius: 10px;
+      padding: 18px 16px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .numbered-item:hover {
-      border-color: rgba(245, 158, 11, 0.5);
+    .step-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
 
-    .numbered-item .num {
-      font-size: 1.5rem;
+    .step-num {
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      border-radius: 50%;
       font-weight: 700;
-      color: #e2e8f0;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
     }
 
-    .numbered-item h4 {
-      font-weight: 600;
-      color: #1e293b;
-      font-size: 0.875rem;
+    .step-card h4 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
     }
 
-    .numbered-item p {
-      font-size: 0.75rem;
+    .step-card p {
+      font-size: 0.78rem;
       color: #64748b;
-      margin-top: 0.25rem;
+      line-height: 1.45;
     }
 
-    /* Project card */
-    .project-card {
+    /* ===== PROJETS ===== */
+    .projets-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .projet-card {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 1.25rem;
-      transition: all 0.2s;
+      border-radius: 10px;
+      padding: 18px 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .project-card:hover {
-      border-color: rgba(245, 158, 11, 0.5);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    .projet-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
 
-    .project-header {
+    .projet-meta {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.5rem;
+      align-items: center;
+      margin-bottom: 8px;
     }
 
-    .project-category {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.5rem;
-      background: #f1f5f9;
-      color: #64748b;
-      border-radius: 4px;
+    .projet-type {
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    .project-year {
-      font-size: 0.75rem;
+    .projet-type.com { background: #dbeafe; color: #1e40af; }
+    .projet-type.innov { background: #fef3c7; color: #92400e; }
+    .projet-type.form { background: #d1fae5; color: #065f46; }
+    .projet-type.culture { background: #ede9fe; color: #6d28d9; }
+    .projet-type.inter { background: #fce7f3; color: #9d174d; }
+
+    .projet-date {
+      font-size: 0.78rem;
       color: #94a3b8;
     }
 
-    .project-card h3 {
-      font-weight: 600;
+    .projet-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
       color: #0f172a;
-      margin-top: 0.5rem;
+      margin-bottom: 6px;
     }
 
-    .project-card .desc {
-      font-size: 0.875rem;
-      color: #475569;
-      margin-top: 0.5rem;
-      line-height: 1.6;
+    .projet-card p {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.5;
     }
 
-    /* Table */
-    .table-container {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    table {
+    /* Publications */
+    .publications-table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 16px;
     }
 
-    thead {
-      background: #f8fafc;
-    }
-
-    th {
+    .publications-table th {
       text-align: left;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.75rem 1.25rem;
-    }
-
-    th:last-child {
-      text-align: right;
-    }
-
-    td {
-      padding: 1rem 1.25rem;
-      font-size: 0.875rem;
-      border-top: 1px solid #f1f5f9;
-    }
-
-    td:first-child {
-      color: #1e293b;
-    }
-
-    td:nth-child(2) {
-      color: #64748b;
-    }
-
-    td:last-child {
-      text-align: right;
+      font-size: 0.78rem;
       color: #94a3b8;
+      padding: 10px 12px;
+      border-bottom: 2px solid #e2e8f0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    tr:hover {
+    .publications-table td {
+      font-size: 0.88rem;
+      padding: 12px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #475569;
+    }
+
+    .publications-table tr:hover {
       background: #f8fafc;
     }
 
-    /* Engagement card */
+    /* ===== ENGAGEMENT ===== */
+    .engagement-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
     .engagement-card {
       background: white;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 1.5rem;
+      border-radius: 10px;
+      padding: 20px;
     }
 
     .engagement-card h3 {
-      font-weight: 600;
-      color: #1e293b;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid #f1f5f9;
-      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
     }
 
-    /* Perspectives */
-    .perspectives {
-      background: #f1f5f9;
-      border-radius: 8px;
-      padding: 1.5rem;
-    }
-
-    .perspectives h3 {
-      font-weight: 600;
-      color: #1e293b;
-      margin-bottom: 0.75rem;
-    }
-
-    .perspectives ul {
+    .engagement-list {
       list-style: none;
     }
 
-    .perspectives li {
-      font-size: 0.875rem;
+    .engagement-list li {
+      font-size: 0.86rem;
       color: #475569;
-      margin-bottom: 0.5rem;
+      padding: 5px 0 5px 16px;
+      position: relative;
+      line-height: 1.5;
     }
 
-    /* Footer */
+    .engagement-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #f59e0b;
+      font-weight: bold;
+    }
+
+    .perspectives-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 28px 0 16px;
+    }
+
+    .perspectives-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .perspectives-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 18px;
+    }
+
+    .perspectives-card h4 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .perspectives-card li {
+      font-size: 0.84rem;
+      color: #475569;
+      padding: 3px 0;
+      list-style: none;
+    }
+
+    /* ===== FOOTER ===== */
     .footer {
-      background: #1e293b;
-      color: white;
-      margin-top: 2.5rem;
+      border-top: 1px solid #e2e8f0;
+      background: white;
     }
 
     .footer-content {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 1.5rem 2rem;
+      padding: 16px 40px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-size: 0.875rem;
-    }
-
-    .footer-content span:first-child {
+      font-size: 0.78rem;
       color: #94a3b8;
     }
 
-    .footer-content span:last-child {
-      color: #64748b;
-    }
-
-    /* Personal info card */
-    .info-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 1.5rem;
-    }
-
-    .info-card h3 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
-    }
-
-    .space-y-6 > * + * {
-      margin-top: 1.5rem;
-    }
-
-    .space-y-4 > * + * {
-      margin-top: 1rem;
-    }
-
-    .space-y-8 > * + * {
-      margin-top: 2rem;
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .header-content { flex-direction: column; gap: 20px; padding: 28px 20px 24px; }
+      .contact-box { text-align: left; }
+      .nav-content { overflow-x: auto; padding: 0 16px; }
+      .nav-btn { padding: 12px 14px; font-size: 0.8rem; }
+      .main { padding: 24px 20px 40px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .profil-grid, .comp-grid, .projets-grid, .engagement-grid, .travaux-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .perspectives-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -733,13 +866,11 @@
           <span class="header-tag">Drone</span>
         </div>
       </div>
-      <div class="header-right">
-        <div class="contact-box">
-          <p class="contact-label">Contact</p>
-          <p>jphi_4@hotmail.fr</p>
-          <p>06 74 58 85 28</p>
-          <p class="location">Toulouse, France</p>
-        </div>
+      <div class="contact-box">
+        <p class="contact-label">Contact</p>
+        <p>jphi_4@hotmail.fr</p>
+        <p>06 74 58 85 28</p>
+        <p class="location">Toulouse, France</p>
       </div>
     </div>
   </header>
@@ -759,579 +890,569 @@
   <!-- Main Content -->
   <main class="main">
 
-    <!-- PROFIL -->
+    <!-- ========== PROFIL ========== -->
     <section id="profil" class="section active">
-      <div class="grid-3-1">
-        <div class="space-y-8">
-          <div>
-            <h2 class="section-title">
-              <span class="section-title-bar"></span>
-              Profil Professionnel
-            </h2>
-            <p class="text-slate-600 mb-4">
-              Enseignant dans l'Éducation nationale depuis 2014, j'exerce une mission riche qui dépasse la simple transmission de savoirs. 
-              Mon rôle s'étend de la salle de classe à la communauté éducative, où collaboration et ouverture sont essentielles.
-            </p>
-            <p class="text-slate-600">
-              Architecte DPLG de formation initiale, je conjugue expertise technique et innovation pédagogique. 
-              En tant que chargé de mission au Campus des Métiers et des Qualifications BTP, je forme enseignants 
-              et professionnels aux usages du numérique : BIM, réalité virtuelle, drones, scanner 3D et intelligence artificielle.
-            </p>
-          </div>
 
-          <div class="quote">
-            « Être enseignant, c'est être pédagogue, éducateur et acteur social, au service de la formation des citoyens de demain. »
-          </div>
+      <h2 class="section-title">
+        <span class="section-title-bar"></span>
+        Profil Professionnel
+      </h2>
 
-          <div>
-            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Chiffres clés</h3>
-            <div class="grid-4">
-              <div class="stat-card">
-                <div class="stat-value">20+</div>
-                <div class="stat-label">Années d'expérience</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value">50+</div>
-                <div class="stat-label">Formations animées</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value">3</div>
-                <div class="stat-label">Publications nationales</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value">25+</div>
-                <div class="stat-label">Projets pédagogiques</div>
-              </div>
+      <p class="profil-text">
+        Enseignant dans l'Éducation nationale depuis 2014, j'exerce une mission riche qui dépasse la simple transmission de savoirs.
+        Mon rôle s'étend de la salle de classe à la communauté éducative, où collaboration et ouverture sont essentielles.
+      </p>
+      <p class="profil-text">
+        Architecte DPLG de formation initiale, je conjugue expertise technique et innovation pédagogique.
+        En tant que chargé de mission au Campus des Métiers et des Qualifications BTP, je forme enseignants
+        et professionnels aux usages du numérique : BIM, réalité virtuelle, drones, scanner 3D et intelligence artificielle.
+      </p>
+
+      <p class="profil-quote">
+        « Être enseignant, c'est être pédagogue, éducateur et acteur social, au service de la formation des citoyens de demain. »
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Années d'expérience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Formations animées</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Publications nationales</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Projets pédagogiques</div>
+        </div>
+      </div>
+
+      <!-- DERNIERS TRAVAUX -->
+      <div class="travaux-section">
+        <h2 class="section-title">
+          <span class="section-title-bar"></span>
+          Derniers Travaux — Applications Éducatives
+        </h2>
+
+        <div class="travaux-grid">
+          <div class="travaux-card">
+            <div class="travaux-card-emoji">🎯</div>
+            <div class="travaux-card-title">Quiz d'Orientation Métiers BTP</div>
+            <div class="travaux-card-desc">Application d'orientation pour le Campus des Métiers BTP Occitanie. Quiz interactif de 10 questions pour découvrir son profil parmi 38 métiers du bâtiment et des travaux publics.</div>
+            <div class="travaux-tags">
+              <span class="travaux-tag github">GitHub Pages</span>
+              <span class="travaux-tag react">React</span>
+              <span class="travaux-tag ia">IA</span>
             </div>
+            <a class="travaux-card-link" href="https://jpa31000.github.io/CMQE-App-m-tiers-/" target="_blank">▸ Voir l'application →</a>
+          </div>
+
+          <div class="travaux-card">
+            <div class="travaux-card-emoji">🏗️</div>
+            <div class="travaux-card-title">World Café Pédagogique</div>
+            <div class="travaux-card-desc">Plateforme pédagogique interactive de type « World Café » pour l'enseignement technique du BTP. Ateliers thématiques, flashcards, quiz verrouillé et suivi de progression.</div>
+            <div class="travaux-tags">
+              <span class="travaux-tag react">React</span>
+              <span class="travaux-tag ia">Claude AI</span>
+            </div>
+            <a class="travaux-card-link" href="https://claude.ai/public/artifacts/321c7a15-38ec-45ce-95a9-d6b2223517d0" target="_blank">▸ Voir l'application →</a>
+          </div>
+
+          <div class="travaux-card">
+            <div class="travaux-card-emoji">📚</div>
+            <div class="travaux-card-title">Assistant Pédagogique Bac Pro TEBAA</div>
+            <div class="travaux-card-desc">Assistant interactif dédié au Bac Pro TEBAA. Accès au référentiel, ressources et accompagnement pédagogique pour les enseignants et les élèves.</div>
+            <div class="travaux-tags">
+              <span class="travaux-tag github">GitHub Pages</span>
+              <span class="travaux-tag ia">IA</span>
+            </div>
+            <a class="travaux-card-link" href="https://jpa31000.github.io/Assistant-tebaaa/" target="_blank">▸ Voir l'application →</a>
+          </div>
+
+          <div class="travaux-card">
+            <div class="travaux-card-emoji">📐</div>
+            <div class="travaux-card-title">Référentiel Interactif BTS Bâtiment</div>
+            <div class="travaux-card-desc">Formulaire interactif pour explorer le référentiel BTS Bâtiment. Navigation structurée dans les compétences, activités professionnelles et unités d'enseignement.</div>
+            <div class="travaux-tags">
+              <span class="travaux-tag github">GitHub Pages</span>
+              <span class="travaux-tag react">React</span>
+            </div>
+            <a class="travaux-card-link" href="https://jpa31000.github.io/Ref-BTS-BAT/" target="_blank">▸ Voir l'application →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formation & Infos -->
+      <div class="profil-grid">
+        <div class="info-card">
+          <h3>Formation</h3>
+          <div class="formation-item">
+            <div>
+              <div class="formation-name">Architecte DPLG</div>
+              <div class="formation-detail">Bac+5</div>
+            </div>
+            <span class="formation-year">2001</span>
+          </div>
+          <div class="formation-item">
+            <div>
+              <div class="formation-name">PLP Externe Génie Civil</div>
+              <div class="formation-detail">Concours</div>
+            </div>
+            <span class="formation-year">2015</span>
+          </div>
+          <div class="formation-item">
+            <div>
+              <div class="formation-name">CAEA</div>
+              <div class="formation-detail">Aéronautique</div>
+            </div>
+            <span class="formation-year">2019</span>
+          </div>
+          <div class="formation-item">
+            <div>
+              <div class="formation-name">Pilote de Drone</div>
+              <div class="formation-detail">Catégorie A1/A3</div>
+            </div>
+            <span class="formation-year">2019</span>
+          </div>
+          <div class="formation-item">
+            <div>
+              <div class="formation-name">Habilitation R408</div>
+              <div class="formation-detail">Échafaudages</div>
+            </div>
+            <span class="formation-year">2017</span>
           </div>
         </div>
 
-        <aside class="space-y-6">
-          <div class="card">
-            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">Formation</h3>
-            <div class="diplome-item">
-              <div>
-                <p class="font-medium text-sm">Architecte DPLG</p>
-                <p class="text-xs text-slate-500">Bac+5</p>
-              </div>
-              <span class="diplome-year">2001</span>
-            </div>
-            <div class="diplome-item">
-              <div>
-                <p class="font-medium text-sm">PLP Externe Génie Civil</p>
-                <p class="text-xs text-slate-500">Concours</p>
-              </div>
-              <span class="diplome-year">2015</span>
-            </div>
-            <div class="diplome-item">
-              <div>
-                <p class="font-medium text-sm">CAEA</p>
-                <p class="text-xs text-slate-500">Aéronautique</p>
-              </div>
-              <span class="diplome-year">2019</span>
-            </div>
-            <div class="diplome-item">
-              <div>
-                <p class="font-medium text-sm">Pilote de Drone</p>
-                <p class="text-xs text-slate-500">Catégorie A1/A3</p>
-              </div>
-              <span class="diplome-year">2019</span>
-            </div>
-            <div class="diplome-item">
-              <div>
-                <p class="font-medium text-sm">Habilitation R408</p>
-                <p class="text-xs text-slate-500">Échafaudages</p>
-              </div>
-              <span class="diplome-year">2017</span>
-            </div>
+        <div class="info-card">
+          <h3>Affectation actuelle</h3>
+          <div style="margin-bottom: 16px;">
+            <div style="font-size: 1.1rem; font-weight: 700; color: #0f172a;">Lycée Urbain Vitry</div>
+            <div style="font-size: 0.88rem; color: #64748b; font-style: italic;">Lycée des Métiers du Bâtiment</div>
+            <div style="font-size: 0.85rem; color: #94a3b8; margin-top: 4px;">Toulouse • Depuis 2016</div>
           </div>
-
-          <div class="card card-dark">
-            <h3 class="text-sm font-semibold uppercase tracking-wider mb-3">Affectation actuelle</h3>
-            <p class="highlight font-semibold text-lg">Lycée Urbain Vitry</p>
-            <p class="text-sm">Lycée des Métiers du Bâtiment</p>
-            <p class="text-xs mt-3" style="color: #64748b;">Toulouse • Depuis 2016</p>
-          </div>
-
-          <div class="info-card">
-            <h3>Informations personnelles</h3>
-            <p class="text-sm text-slate-600">Né le 04 juin 1974</p>
-            <p class="text-sm text-slate-600">Pacsé, 2 enfants</p>
-          </div>
-        </aside>
+          <h3 style="margin-top: 20px;">Informations personnelles</h3>
+          <div style="font-size: 0.9rem; color: #475569; padding: 4px 0;">Né le 04 juin 1974</div>
+          <div style="font-size: 0.9rem; color: #475569; padding: 4px 0;">Pacsé, 2 enfants</div>
+        </div>
       </div>
+
     </section>
 
-    <!-- PARCOURS -->
+    <!-- ========== PARCOURS ========== -->
     <section id="parcours" class="section">
+
       <h2 class="section-title">
         <span class="section-title-bar"></span>
         Parcours Professionnel
       </h2>
-      
-      <div class="timeline-item">
-        <div class="timeline-date">2016 - Présent</div>
-        <div class="timeline-content">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <h3>Professeur de Lycée Professionnel</h3>
-            <p class="specialite">Génie Civil, Construction et Économie</p>
-            <p class="lieu">Lycée Urbain Vitry - Toulouse</p>
-            <p class="detail">Enseignement en Bac Pro TEBAA, BTS Bâtiment. Affectation à titre définitif.</p>
-          </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot active"></div>
+          <div class="timeline-date">2016 - Présent</div>
+          <div class="timeline-title">Professeur de Lycée Professionnel</div>
+          <div class="timeline-subtitle">Génie Civil, Construction et Économie</div>
+          <div class="timeline-org">Lycée Urbain Vitry - Toulouse</div>
+          <div class="timeline-desc">Enseignement en Bac Pro TEBAA, BTS Bâtiment, BTS EEC. Affectation à titre définitif.</div>
         </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot active"></div>
+          <div class="timeline-date">2019 - 2025</div>
+          <div class="timeline-title">Chargé de Mission</div>
+          <div class="timeline-subtitle">CMQE BTP et Usage du Numérique</div>
+          <div class="timeline-org">Campus des Métiers et des Qualifications</div>
+          <div class="timeline-desc">Référent capture du réel, formation VR/BIM, accompagnement des établissements, développement d'IA éducative.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2015 - 2016</div>
+          <div class="timeline-title">Professeur Stagiaire</div>
+          <div class="timeline-subtitle">Génie Civil</div>
+          <div class="timeline-org">Académie Aix-Marseille</div>
+          <div class="timeline-desc">Formation initiale, Lycée Les Alpilles.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2012 - 2014</div>
+          <div class="timeline-title">Chargé d'Opérations</div>
+          <div class="timeline-subtitle">Direction du Patrimoine</div>
+          <div class="timeline-org">Mairie de Blagnac</div>
+          <div class="timeline-desc">Conduite d'opérations en mode BIM, gestion budgétaire.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2010 - 2013</div>
+          <div class="timeline-title">Architecte Libéral</div>
+          <div class="timeline-subtitle">Maquettes Numériques BIM</div>
+          <div class="timeline-org">Toulouse</div>
+          <div class="timeline-desc">Relevés 3D, AMO Ministère de la Défense.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2005 - 2008</div>
+          <div class="timeline-title">Responsable Bureau d'Études</div>
+          <div class="timeline-subtitle">Entreprise TCE</div>
+          <div class="timeline-org">Toulouse</div>
+          <div class="timeline-desc">Formateur Revit, R&D habitat modulaire avec Dassault.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2002 - 2005</div>
+          <div class="timeline-title">Chef de Projet Architecture</div>
+          <div class="timeline-subtitle">Service Architecture</div>
+          <div class="timeline-org">Mairie de Toulouse</div>
+          <div class="timeline-desc">Conception et réalisation d'équipements publics.</div>
+        </div>
+
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">2019 - 2025</div>
-        <div class="timeline-content">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <h3>Chargé de Mission</h3>
-            <p class="specialite">CMQE BTP et Usage du Numérique</p>
-            <p class="lieu">Campus des Métiers et des Qualifications</p>
-            <p class="detail">Référent capture du réel, formation VR/BIM, accompagnement des établissements, développement d'IA éducative.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">2015 - 2016</div>
-        <div class="timeline-content">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <h3>Professeur Stagiaire</h3>
-            <p class="specialite">Génie Civil</p>
-            <p class="lieu">Académie Aix-Marseille</p>
-            <p class="detail">Formation initiale, Lycée Les Alpilles.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">2012 - 2014</div>
-        <div class="timeline-content">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <h3>Chargé d'Opérations</h3>
-            <p class="specialite">Direction du Patrimoine</p>
-            <p class="lieu">Mairie de Blagnac</p>
-            <p class="detail">Conduite d'opérations en mode BIM, gestion budgétaire.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">2010 - 2013</div>
-        <div class="timeline-content">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <h3>Architecte Libéral</h3>
-            <p class="specialite">Maquettes Numériques BIM</p>
-            <p class="lieu">Toulouse</p>
-            <p class="detail">Relevés 3D, AMO Ministère de la Défense.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">2005 - 2008</div>
-        <div class="timeline-content">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <h3>Responsable Bureau d'Études</h3>
-            <p class="specialite">Entreprise TCE</p>
-            <p class="lieu">Toulouse</p>
-            <p class="detail">Formateur Revit, R&D habitat modulaire avec Dassault.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">2002 - 2005</div>
-        <div class="timeline-content">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <h3>Chef de Projet Architecture</h3>
-            <p class="specialite">Service Architecture</p>
-            <p class="lieu">Mairie de Toulouse</p>
-            <p class="detail">Conception et réalisation d'équipements publics.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- COMPETENCES -->
+    <!-- ========== COMPÉTENCES ========== -->
     <section id="competences" class="section">
-      <div class="space-y-8">
-        <div>
-          <h2 class="section-title">
-            <span class="section-title-bar"></span>
-            Compétences Pédagogiques
-          </h2>
-          
-          <div class="grid-2">
-            <div class="card">
-              <h3 class="font-semibold mb-2">Pédagogie de Projet</h3>
-              <p class="text-sm text-slate-600">Placer l'élève au cœur de ses apprentissages à travers des situations concrètes et professionnalisantes</p>
-            </div>
-            <div class="card">
-              <h3 class="font-semibold mb-2">Classe Inversée</h3>
-              <p class="text-sm text-slate-600">Contenus théoriques en amont (H5P, Edpuzzle), temps de classe dédié à la pratique et l'accompagnement</p>
-            </div>
-            <div class="card">
-              <h3 class="font-semibold mb-2">Classe Renversée</h3>
-              <p class="text-sm text-slate-600">L'élève devient acteur de la transmission, favorisant la co-construction des savoirs</p>
-            </div>
-            <div class="card">
-              <h3 class="font-semibold mb-2">Pédagogie Active</h3>
-              <p class="text-sm text-slate-600">Manipulation, expérimentation et résolution de problèmes en contexte professionnel</p>
-            </div>
-            <div class="card">
-              <h3 class="font-semibold mb-2">Différenciation</h3>
-              <p class="text-sm text-slate-600">Parcours personnalisés et multimodalité pour s'adapter à chaque apprenant</p>
-            </div>
-            <div class="card">
-              <h3 class="font-semibold mb-2">Évaluation par Compétences</h3>
-              <p class="text-sm text-slate-600">Auto-évaluation, feedback formatif et construction de repères clairs</p>
-            </div>
+
+      <h2 class="section-title">
+        <span class="section-title-bar"></span>
+        Compétences Pédagogiques
+      </h2>
+
+      <div class="comp-grid">
+        <div class="comp-card">
+          <h3>🎓 Pédagogie de Projet</h3>
+          <div class="comp-card-desc">Placer l'élève au cœur de ses apprentissages à travers des situations concrètes et professionnalisantes</div>
+        </div>
+        <div class="comp-card">
+          <h3>🔄 Classe Inversée</h3>
+          <div class="comp-card-desc">Contenus théoriques en amont (H5P, Edpuzzle), temps de classe dédié à la pratique et l'accompagnement</div>
+        </div>
+        <div class="comp-card">
+          <h3>🔀 Classe Renversée</h3>
+          <div class="comp-card-desc">L'élève devient acteur de la transmission, favorisant la co-construction des savoirs</div>
+        </div>
+        <div class="comp-card">
+          <h3>🛠️ Pédagogie Active</h3>
+          <div class="comp-card-desc">Manipulation, expérimentation et résolution de problèmes en contexte professionnel</div>
+        </div>
+        <div class="comp-card">
+          <h3>🎯 Différenciation</h3>
+          <div class="comp-card-desc">Parcours personnalisés et multimodalité pour s'adapter à chaque apprenant</div>
+        </div>
+        <div class="comp-card">
+          <h3>📊 Évaluation par Compétences</h3>
+          <div class="comp-card-desc">Auto-évaluation, feedback formatif et construction de repères clairs</div>
+        </div>
+      </div>
+
+      <div class="skill-section-title">Compétences Techniques</div>
+
+      <div class="comp-grid">
+        <div class="comp-card">
+          <h3>Maquette Numérique</h3>
+          <div class="comp-tags">
+            <span class="comp-tag">Revit Architecture</span>
+            <span class="comp-tag">ArchiCAD</span>
+            <span class="comp-tag">SketchUp Pro</span>
+            <span class="comp-tag">Archiwizard</span>
           </div>
         </div>
-
-        <div>
-          <h2 class="section-title">
-            <span class="section-title-bar"></span>
-            Compétences Techniques
-          </h2>
-          
-          <div class="grid-3">
-            <div class="card">
-              <h3 class="font-semibold text-sm mb-3">Maquette Numérique</h3>
-              <div>
-                <span class="tag">Revit Architecture</span>
-                <span class="tag">ArchiCAD</span>
-                <span class="tag">SketchUp Pro</span>
-                <span class="tag">Archiwizard</span>
-              </div>
-            </div>
-            <div class="card">
-              <h3 class="font-semibold text-sm mb-3">Technologies Immersives</h3>
-              <div>
-                <span class="tag">Twinmotion</span>
-                <span class="tag">Oculus Quest</span>
-                <span class="tag">Réalité Virtuelle</span>
-                <span class="tag">Réalité Augmentée</span>
-              </div>
-            </div>
-            <div class="card">
-              <h3 class="font-semibold text-sm mb-3">Intelligence Artificielle</h3>
-              <div>
-                <span class="tag">Apps pédagogiques</span>
-                <span class="tag">Recherche appliquée</span>
-                <span class="tag">Outils génératifs</span>
-              </div>
-            </div>
-            <div class="card">
-              <h3 class="font-semibold text-sm mb-3">Capture du Réel</h3>
-              <div>
-                <span class="tag">Pilote drone A1/A3</span>
-                <span class="tag">Photogrammétrie</span>
-                <span class="tag">Scanner 3D X7 Trimble</span>
-              </div>
-            </div>
-            <div class="card">
-              <h3 class="font-semibold text-sm mb-3">Outils Pédagogiques</h3>
-              <div>
-                <span class="tag">H5P</span>
-                <span class="tag">Genially</span>
-                <span class="tag">Edpuzzle</span>
-                <span class="tag">Gamma</span>
-                <span class="tag">Coggle</span>
-              </div>
-            </div>
-            <div class="card">
-              <h3 class="font-semibold text-sm mb-3">Production Média</h3>
-              <div>
-                <span class="tag">Photoshop</span>
-                <span class="tag">Lightroom</span>
-                <span class="tag">Montage vidéo</span>
-              </div>
-            </div>
+        <div class="comp-card">
+          <h3>Technologies Immersives</h3>
+          <div class="comp-tags">
+            <span class="comp-tag">Twinmotion</span>
+            <span class="comp-tag">Oculus Quest</span>
+            <span class="comp-tag">Réalité Virtuelle</span>
+            <span class="comp-tag">Réalité Augmentée</span>
           </div>
         </div>
-
-        <div class="tools-section">
-          <h3 class="font-semibold mb-4">Outils de la Classe Inversée & Intelligence Artificielle</h3>
-          <div>
-            <span class="tool-tag">H5P</span>
-            <span class="tool-tag">Edpuzzle</span>
-            <span class="tool-tag">Genially</span>
-            <span class="tool-tag">Twinmotion VR</span>
-            <span class="tool-tag">Coggle</span>
-            <span class="tool-tag">ChatGPT</span>
-            <span class="tool-tag">Perplexity</span>
+        <div class="comp-card">
+          <h3>Intelligence Artificielle</h3>
+          <div class="comp-tags">
+            <span class="comp-tag">Apps pédagogiques</span>
+            <span class="comp-tag">Recherche appliquée</span>
+            <span class="comp-tag">Outils génératifs</span>
+          </div>
+        </div>
+        <div class="comp-card">
+          <h3>Capture du Réel</h3>
+          <div class="comp-tags">
+            <span class="comp-tag">Pilote drone A1/A3</span>
+            <span class="comp-tag">Photogrammétrie</span>
+            <span class="comp-tag">Scanner 3D X7 Trimble</span>
+          </div>
+        </div>
+        <div class="comp-card">
+          <h3>Outils Pédagogiques</h3>
+          <div class="comp-tags">
+            <span class="comp-tag">H5P</span>
+            <span class="comp-tag">Genially</span>
+            <span class="comp-tag">Edpuzzle</span>
+            <span class="comp-tag">Gamma</span>
+            <span class="comp-tag">Coggle</span>
+          </div>
+        </div>
+        <div class="comp-card">
+          <h3>Production Média</h3>
+          <div class="comp-tags">
+            <span class="comp-tag">Photoshop</span>
+            <span class="comp-tag">Lightroom</span>
+            <span class="comp-tag">Montage vidéo</span>
           </div>
         </div>
       </div>
+
+      <div class="skill-section-title">Outils de la Classe Inversée & Intelligence Artificielle</div>
+      <div class="tools-grid">
+        <span class="comp-tag">H5P</span>
+        <span class="comp-tag">Edpuzzle</span>
+        <span class="comp-tag">Genially</span>
+        <span class="comp-tag">Twinmotion VR</span>
+        <span class="comp-tag">Coggle</span>
+        <span class="comp-tag">ChatGPT</span>
+        <span class="comp-tag">Perplexity</span>
+      </div>
+
     </section>
 
-    <!-- PEDAGOGIE -->
+    <!-- ========== APPROCHE PÉDAGOGIQUE ========== -->
     <section id="pedagogie" class="section">
+
       <h2 class="section-title">
         <span class="section-title-bar"></span>
         Approche Pédagogique
       </h2>
 
-      <div class="grid-5-2">
-        <div class="space-y-6">
-          <p class="text-slate-600">
-            J'ancre mon enseignement sur une <strong>pédagogie de projet</strong> qui place l'élève au cœur de ses 
-            apprentissages. Je m'appuie sur des situations concrètes pour développer les compétences techniques et professionnelles attendues.
-          </p>
-          
-          <p class="text-slate-600">
-            Cette <strong>pédagogie active</strong> stimule la co-construction des savoirs et mobilise la multimodalité 
-            (texte, audio, vidéo, interactif). Elle facilite la différenciation, renforce l'appropriation des savoirs et développe 
-            la maîtrise critique des outils numériques, compétence indispensable du socle commun.
-          </p>
+      <p class="pedagogy-text">
+        J'ancre mon enseignement sur une <strong>pédagogie de projet</strong> qui place l'élève au cœur de ses
+        apprentissages. Je m'appuie sur des situations concrètes pour développer les compétences techniques et professionnelles attendues.
+      </p>
+      <p class="pedagogy-text">
+        Cette <strong>pédagogie active</strong> stimule la co-construction des savoirs et mobilise la multimodalité
+        (texte, audio, vidéo, interactif). Elle facilite la différenciation, renforce l'appropriation des savoirs et développe
+        la maîtrise critique des outils numériques, compétence indispensable du socle commun.
+      </p>
 
-          <div class="card">
-            <h3 class="font-semibold mb-4">Valeurs et principes</h3>
-            <div class="grid-2">
-              <ul class="dot-list">
-                <li>Climat bienveillant et exigeant</li>
-                <li>Maîtrise de la langue française</li>
-                <li>Clarté des consignes</li>
-              </ul>
-              <ul class="dot-list">
-                <li>Lien école/famille</li>
-                <li>Valeurs de la République</li>
-                <li>Formation citoyenne</li>
-              </ul>
-            </div>
-          </div>
+      <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin: 20px 0 10px;">Valeurs et principes</div>
+
+      <div class="values-grid">
+        <div class="value-item"><span class="value-bullet"></span>Climat bienveillant et exigeant</div>
+        <div class="value-item"><span class="value-bullet"></span>Lien école/famille</div>
+        <div class="value-item"><span class="value-bullet"></span>Maîtrise de la langue française</div>
+        <div class="value-item"><span class="value-bullet"></span>Valeurs de la République</div>
+        <div class="value-item"><span class="value-bullet"></span>Clarté des consignes</div>
+        <div class="value-item"><span class="value-bullet"></span>Formation citoyenne</div>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h4>Pédagogie de Projet</h4>
+          <p>Situations concrètes, compétences techniques, apprentissage par les pairs</p>
         </div>
-
-        <div>
-          <div class="numbered-item">
-            <span class="num">01</span>
-            <div>
-              <h4>Pédagogie de Projet</h4>
-              <p>Situations concrètes, compétences techniques, apprentissage par les pairs</p>
-            </div>
-          </div>
-          <div class="numbered-item">
-            <span class="num">02</span>
-            <div>
-              <h4>Classe Inversée</h4>
-              <p>Contenus en amont via H5P/Edpuzzle, pratique active en classe</p>
-            </div>
-          </div>
-          <div class="numbered-item">
-            <span class="num">03</span>
-            <div>
-              <h4>Classe Renversée</h4>
-              <p>L'élève devient enseignant, co-construction des savoirs</p>
-            </div>
-          </div>
-          <div class="numbered-item">
-            <span class="num">04</span>
-            <div>
-              <h4>Différenciation</h4>
-              <p>Multimodalité, parcours personnalisés, remédiation ciblée</p>
-            </div>
-          </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h4>Classe Inversée</h4>
+          <p>Contenus en amont via H5P/Edpuzzle, pratique active en classe</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h4>Classe Renversée</h4>
+          <p>L'élève devient enseignant, co-construction des savoirs</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h4>Différenciation</h4>
+          <p>Multimodalité, parcours personnalisés, remédiation ciblée</p>
         </div>
       </div>
+
     </section>
 
-    <!-- PROJETS -->
+    <!-- ========== PROJETS ========== -->
     <section id="projets" class="section">
-      <div class="space-y-8">
-        <div>
-          <h2 class="section-title">
-            <span class="section-title-bar"></span>
-            Projets & Réalisations
-          </h2>
-          
-          <div class="grid-2">
-            <div class="project-card">
-              <div class="project-header">
-                <span class="project-category">Communication</span>
-                <span class="project-year">2024-2026</span>
-              </div>
-              <h3>Fiches de Présentation des Formations</h3>
-              <p class="desc">Conception des supports de communication du lycée en collaboration avec le DDFPT et l'enseignant d'arts appliqués.</p>
-            </div>
-            <div class="project-card">
-              <div class="project-header">
-                <span class="project-category">Innovation</span>
-                <span class="project-year">2024-2026</span>
-              </div>
-              <h3>Vibe-Coding</h3>
-              <p class="desc">Développement d'applications de gestion des outils informatiques et d'aide à la mise en place de procédures de type BPMN.</p>
-            </div>
-            <div class="project-card">
-              <div class="project-header">
-                <span class="project-category">Formation</span>
-                <span class="project-year">2025</span>
-              </div>
-              <h3>PFMP au CMQE</h3>
-              <p class="desc">Encadrement de stages : relevé scanner 3D, maquettes numériques "tel que construit", certification drone A1/A3.</p>
-            </div>
-            <div class="project-card">
-              <div class="project-header">
-                <span class="project-category">Innovation</span>
-                <span class="project-year">2024-2026</span>
-              </div>
-              <h3>IA & Pédagogie BTP</h3>
-              <p class="desc">Création d'applications pédagogiques : gestion de classe, estimation BTP, architecture paramétrique.</p>
-            </div>
-            <div class="project-card">
-              <div class="project-header">
-                <span class="project-category">Projet culturel</span>
-                <span class="project-year">2024-2025</span>
-              </div>
-              <h3>Regards Croisés</h3>
-              <p class="desc">Organisation d'un concours photo inter-lycées BTP avec exposition au CMQE.</p>
-            </div>
-            <div class="project-card">
-              <div class="project-header">
-                <span class="project-category">International</span>
-                <span class="project-year">2022-2024</span>
-              </div>
-              <h3>Formation BIM International</h3>
-              <p class="desc">Programme de formation en distanciel avec l'Université USEK au Liban sur 2 années.</p>
-            </div>
+
+      <h2 class="section-title">
+        <span class="section-title-bar"></span>
+        Projets & Réalisations
+      </h2>
+
+      <div class="projets-grid">
+        <div class="projet-card">
+          <div class="projet-meta">
+            <span class="projet-type com">Communication</span>
+            <span class="projet-date">2024-2026</span>
           </div>
+          <h3>Fiches de Présentation des Formations</h3>
+          <p>Conception des supports de communication du lycée en collaboration avec le DDFPT et l'enseignant d'arts appliqués.</p>
         </div>
 
-        <div>
-          <h2 class="section-title">
-            <span class="section-title-bar"></span>
-            Publications
-          </h2>
-          
-          <div class="table-container">
-            <table>
-              <thead>
-                <tr>
-                  <th>Publication</th>
-                  <th>Source</th>
-                  <th>Année</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>R408 - Utiliser un échafaudage de pied</td>
-                  <td>Éduscol</td>
-                  <td>2021</td>
-                </tr>
-                <tr>
-                  <td>Sécurité et respect du planning</td>
-                  <td>Éduscol</td>
-                  <td>2020</td>
-                </tr>
-                <tr>
-                  <td>Plans de travail & Réalité Virtuelle</td>
-                  <td>Site Académique STI</td>
-                  <td>2020-2021</td>
-                </tr>
-                <tr>
-                  <td>9 formations asynchrones - Outils numériques BTP</td>
-                  <td>Plateforme IOGA (CMQE)</td>
-                  <td>2023-2024</td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="projet-card">
+          <div class="projet-meta">
+            <span class="projet-type innov">Innovation</span>
+            <span class="projet-date">2024-2026</span>
           </div>
+          <h3>Vibe-Coding</h3>
+          <p>Développement d'applications de gestion des outils informatiques et d'aide à la mise en place de procédures de type BPMN.</p>
+        </div>
+
+        <div class="projet-card">
+          <div class="projet-meta">
+            <span class="projet-type form">Formation</span>
+            <span class="projet-date">2025</span>
+          </div>
+          <h3>PFMP au CMQE</h3>
+          <p>Encadrement de stages : relevé scanner 3D, maquettes numériques "tel que construit", certification drone A1/A3.</p>
+        </div>
+
+        <div class="projet-card">
+          <div class="projet-meta">
+            <span class="projet-type innov">Innovation</span>
+            <span class="projet-date">2024-2026</span>
+          </div>
+          <h3>IA & Pédagogie BTP</h3>
+          <p>Création d'applications pédagogiques : gestion de classe, estimation BTP, architecture paramétrique.</p>
+        </div>
+
+        <div class="projet-card">
+          <div class="projet-meta">
+            <span class="projet-type culture">Projet culturel</span>
+            <span class="projet-date">2024-2025</span>
+          </div>
+          <h3>Regards Croisés</h3>
+          <p>Organisation d'un concours photo inter-lycées BTP avec exposition au CMQE.</p>
+        </div>
+
+        <div class="projet-card">
+          <div class="projet-meta">
+            <span class="projet-type inter">International</span>
+            <span class="projet-date">2022-2024</span>
+          </div>
+          <h3>Formation BIM International</h3>
+          <p>Programme de formation en distanciel avec l'Université USEK au Liban sur 2 années.</p>
         </div>
       </div>
+
+      <!-- Publications -->
+      <div class="skill-section-title" style="margin-top: 36px;">Publications</div>
+      <table class="publications-table">
+        <thead>
+          <tr>
+            <th>Publication</th>
+            <th>Source</th>
+            <th>Année</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>R408 - Utiliser un échafaudage de pied</td>
+            <td>Éduscol</td>
+            <td>2021</td>
+          </tr>
+          <tr>
+            <td>Sécurité et respect du planning</td>
+            <td>Éduscol</td>
+            <td>2020</td>
+          </tr>
+          <tr>
+            <td>Plans de travail & Réalité Virtuelle</td>
+            <td>Site Académique STI</td>
+            <td>2020-2021</td>
+          </tr>
+          <tr>
+            <td>9 formations asynchrones - Outils numériques BTP</td>
+            <td>Plateforme IOGA (CMQE)</td>
+            <td>2023-2024</td>
+          </tr>
+        </tbody>
+      </table>
+
     </section>
 
-    <!-- ENGAGEMENT -->
+    <!-- ========== ENGAGEMENT ========== -->
     <section id="engagement" class="section">
-      <div class="space-y-8">
-        <div>
-          <h2 class="section-title">
-            <span class="section-title-bar"></span>
-            Engagement Professionnel
-          </h2>
-          
-          <div class="grid-3">
-            <div class="engagement-card">
-              <h3>Responsabilités institutionnelles</h3>
-              <ul class="dot-list">
-                <li>Professeur principal</li>
-                <li>Membre suppléant du Conseil d'Administration</li>
-                <li>Commission d'auto-évaluation du lycée</li>
-                <li>Permanent à la conception des sujets Bac TEBAA</li>
-                <li>Membre du CP2E (Comité Partenarial Éducation-Économie) : alignement objectifs pédagogiques / besoins socio-économiques, adaptation des formations aux compétences du marché, aide à l'orientation des élèves</li>
-              </ul>
-            </div>
 
-            <div class="engagement-card">
-              <h3>Formation & Accompagnement</h3>
-              <ul class="dot-list">
-                <li>Formateur de formateurs STI au CMQE BTP</li>
-                <li>Tuteur de néo-contractuels</li>
-                <li>Accompagnement GREBTP - Projets interdisciplinaires</li>
-                <li>Formation BIM en distanciel - USEK Liban</li>
-              </ul>
-            </div>
+      <h2 class="section-title">
+        <span class="section-title-bar"></span>
+        Engagement Professionnel
+      </h2>
 
-            <div class="engagement-card">
-              <h3>Rayonnement</h3>
-              <ul class="dot-list">
-                <li>Productions pour Éduscol</li>
-                <li>Programme Égalité des chances (Sciences Po et ENSA Toulouse)</li>
-                <li>Rencontre Erasmus - Délégation lituanienne</li>
-                <li>Travaux sur l'IA éducative en lien avec les compétences ciblées par l'UNESCO</li>
-                <li>Conception de sujets BTS BAT, BTS EEC et Bac Pro TEBAA</li>
-                <li>Printemps des poètes : création d'une exposition avec les élèves de 1AA</li>
-              </ul>
-            </div>
-          </div>
+      <div class="engagement-grid">
+        <div class="engagement-card">
+          <h3>Responsabilités institutionnelles</h3>
+          <ul class="engagement-list">
+            <li>Professeur principal</li>
+            <li>Membre suppléant du Conseil d'Administration</li>
+            <li>Commission d'auto-évaluation du lycée</li>
+            <li>Permanent à la conception des sujets Bac TEBAA</li>
+            <li>Membre du CP2E (Comité Partenarial Éducation-Économie) : alignement objectifs pédagogiques / besoins socio-économiques, adaptation des formations aux compétences du marché, aide à l'orientation des élèves</li>
+          </ul>
         </div>
 
-        <div>
-          <h2 class="section-title">
-            <span class="section-title-bar"></span>
-            Perspectives d'Évolution
-          </h2>
-          
-          <div class="perspectives">
-            <div class="grid-3">
-              <div>
-                <h3>Objectifs</h3>
-                <ul>
-                  <li>• Formateur académique orienté pédagogie numérique</li>
-                  <li>• Référent numérique établissement</li>
-                  <li>• Coordination projets pédagogiques</li>
-                  <li>• Tutorat d'enseignants</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Ouvertures</h3>
-                <ul>
-                  <li>• Diversification des publics</li>
-                  <li>• Projets à dimension internationale</li>
-                  <li>• Missions d'encadrement</li>
-                  <li>• Lien formation initiale/continue</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Recherche</h3>
-                <ul>
-                  <li>• Intelligence artificielle et pédagogie</li>
-                  <li>• Recherche appliquée</li>
-                  <li>• Coopérations internationales</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <div class="engagement-card">
+          <h3>Formation & Accompagnement</h3>
+          <ul class="engagement-list">
+            <li>Formateur de formateurs STI au CMQE BTP</li>
+            <li>Tuteur de néo-contractuels</li>
+            <li>Accompagnement GREBTP - Projets interdisciplinaires</li>
+            <li>Formation BIM en distanciel - USEK Liban</li>
+          </ul>
+        </div>
+
+        <div class="engagement-card">
+          <h3>Rayonnement</h3>
+          <ul class="engagement-list">
+            <li>Productions pour Éduscol</li>
+            <li>Programme Égalité des chances (Sciences Po et ENSA Toulouse)</li>
+            <li>Rencontre Erasmus - Délégation lituanienne</li>
+            <li>Travaux sur l'IA éducative en lien avec les compétences ciblées par l'UNESCO</li>
+            <li>Conception de sujets BTS BAT, BTS EEC et Bac Pro TEBAA</li>
+            <li>Printemps des poètes : création d'une exposition avec les élèves de 1AA</li>
+          </ul>
         </div>
       </div>
+
+      <!-- Perspectives -->
+      <div class="perspectives-title">Perspectives d'Évolution</div>
+
+      <div class="perspectives-grid">
+        <div class="perspectives-card">
+          <h4>Objectifs</h4>
+          <ul>
+            <li>• Formateur académique orienté pédagogie numérique</li>
+            <li>• Référent numérique établissement</li>
+            <li>• Coordination projets pédagogiques</li>
+            <li>• Tutorat d'enseignants</li>
+          </ul>
+        </div>
+        <div class="perspectives-card">
+          <h4>Ouvertures</h4>
+          <ul>
+            <li>• Diversification des publics</li>
+            <li>• Projets à dimension internationale</li>
+            <li>• Missions d'encadrement</li>
+            <li>• Lien formation initiale/continue</li>
+          </ul>
+        </div>
+        <div class="perspectives-card">
+          <h4>Recherche</h4>
+          <ul>
+            <li>• Intelligence artificielle et pédagogie</li>
+            <li>• Recherche appliquée</li>
+            <li>• Coopérations internationales</li>
+          </ul>
+        </div>
+      </div>
+
     </section>
 
   </main>
@@ -1346,13 +1467,11 @@
 
   <script>
     function showSection(sectionId, btn) {
-      // Hide all sections
       document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      // Show selected section
       document.getElementById(sectionId).classList.add('active');
-      // Update nav buttons
       document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 
